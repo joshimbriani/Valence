@@ -24,6 +24,26 @@
 <body class="{{body_class}}">
 
     {{! Everything else gets inserted here }}
+
+    <header class="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+        <div class="header-bar">
+            <div class="title">
+                {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+                <div class="vertical">
+                    <div class="blog-title">{{@blog.title}}</div>
+                    <div class="blog-description">{@blog.description}}</div>
+                </div>
+            </div>
+            <ul class="menu">
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/photography">Photography</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+             </ul>
+        </div>
+    </header>
+
     {{{body}}}
 
     <footer class="site-footer">
